@@ -6,7 +6,7 @@ from flask_pymongo import MongoClient
 
 def get_valid_portfolio_details():
     # Initialize MongoDB connection
-    client = MongoClient("mongodb+srv://unniananya:Yayaya021.@cluster0.0zxo4wb.mongodb.net/fyp?retryWrites=true&w=majority")
+    client = MongoClient("MONGODB_CONNECT")
     db = client["fyp"]
     collection = db["portfolios"]  # Adjusted to the portfolios collection
 
@@ -27,7 +27,7 @@ def get_valid_portfolio_details():
 
 def get_user_ids_with_valid_initial_amount():
     # Initialize MongoDB connection
-    client = MongoClient("mongodb+srv://unniananya:Yayaya021.@cluster0.0zxo4wb.mongodb.net/fyp?retryWrites=true&w=majority")
+    client = MongoClient("MONGODB_CONNECT")
     db = client["fyp"]
     collection = db["users"]
 
@@ -45,7 +45,7 @@ def get_user_ids_with_valid_initial_amount():
 
 def get_all_paper_trading_user_ids_and_portfolio_names():
     # Initialize MongoDB connection
-    client = MongoClient("mongodb+srv://unniananya:Yayaya021.@cluster0.0zxo4wb.mongodb.net/fyp?retryWrites=true&w=majority")
+    client = MongoClient("MONGODB_CONNECT")
     db = client["fyp"]
     collection = db["paper_trading_portfolio"]
 
