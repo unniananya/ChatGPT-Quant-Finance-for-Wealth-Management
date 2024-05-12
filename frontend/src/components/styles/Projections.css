@@ -1,0 +1,68 @@
+.projections-container {
+    background-color: #000d1a;
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.projections-container .chart-header {
+    width: 100%; /* Full width to match the chart container */
+    text-align: center; /* Center the text within the header */
+    font-size: 1.2em;
+    margin-bottom: 10px; /* Space between header and chart */
+    color: white;
+    font-weight: 500;
+}
+
+
+.projections-container .portfolio-selector {
+    align-self: flex-start;
+    margin-left: 70px;
+    position: relative;
+    display: inline-block; /* Ensures the wrapper doesn't take the full width */
+    width: auto; /* Adjust the width as necessary */
+}
+
+.projections-container .portfolio-selector select {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000d1a;
+    color: white;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid #0066cd;
+    width: 100%; /* Adjust the width as necessary, subtract the padding */
+    cursor: pointer; /* Changes the cursor to indicate this is a dropdown */
+}
+
+/* Style options */
+.projections-container .portfolio-selector select option {
+    background: #000d1a; /* Ensures the dropdown options match the button style */
+    color: white; /* Text color for the options */
+}
+
+/* Change background color of options on hover */
+.projections-container .portfolio-selector select option:hover {
+    background-color: #001a33;
+}
+
+/* You might also need to style the focus state */
+.projections-container .portfolio-selector select:focus {
+    outline: none; /* Removes the default outline shown on focus */
+    border: 1px solid #0066cd; /* Adds a custom border style on focus */
+}
+
+/* To style the select dropdown on browsers like Chrome, you might need to force the background-color */
+/* since some browsers use their own styling for options */
+.projections-container .portfolio-selector select:-webkit-autofill,
+.projections-container .portfolio-selector select:-webkit-autofill:hover, 
+.projections-container .portfolio-selector select:-webkit-autofill:focus, 
+.projections-container .portfolio-selector select:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #000d1a inset !important;
+    -webkit-text-fill-color: white !important;
+}

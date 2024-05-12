@@ -1,0 +1,51 @@
+.portfolio-nav {
+    background-color: #000d1a; /* Black background for the navbar */
+    display: flex;
+    justify-content: center; /* Align the buttons to the start */
+    padding-left: 20px; /* Padding to push content from the edge */
+    border-bottom: 0.02px solid #404040; /* Thin grey line at the bottom */
+    border-top: 0.02px solid #404040;
+    z-index: 5;
+}
+
+.portfolio-nav a {
+    padding: 20px 40px;
+    margin: 0 200px;
+    text-decoration: none;
+    color: #989898; /* White text */
+    background-color: transparent; /* Transparent background */
+    text-transform: inherit; /* Uppercase letters */
+    font-weight: inherit; /* Bold font */
+    /* margin-right: 10px;  */
+    border: none;
+    border-radius: 0; /* No rounded corners */
+    outline: none;
+    transition: color 0.3s, border-color 0.3s, background-color 0.3s; /* Smooth transition for hover effect */
+    font-size: large;
+}
+
+/* Style for the active state, matching the green color in your design */
+.portfolio-nav a.active {
+    color: #0066cd; /* Blue text for active tab */
+    border-bottom: 3px solid #0066cd; /* Green underline for active tab */
+    background-color: transparent;
+}
+
+/* Hover state, but not for active tab */
+.portfolio-nav a:not(.active):hover {
+    color: #0066cd; /* Color when hovering */
+    border-bottom: 3px solid #0066cd; /* Border bottom to indicate hover state */
+    background-color: transparent;
+}
+
+/* Add responsiveness for mobile sizes if required */
+@media (max-width: 768px) {
+    .portfolio-nav {
+        flex-direction: column;
+        align-items: flex-start; /* Align items to the start on mobile */
+    }
+    .portfolio-nav a {
+        width: 100%; /* Full width for mobile */
+        margin-bottom: 10px; /* Space out buttons when stacked */
+    }
+}

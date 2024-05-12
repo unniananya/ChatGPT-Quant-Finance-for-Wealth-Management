@@ -1,0 +1,281 @@
+/* Reset padding and margin to prevent inconsistencies */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Main sidebar styles */
+.sidebar {
+    background-color: #001a33;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60px; /* Width of the closed sidebar */
+    /* transition: all 0.3s; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 15px;
+    z-index: 15; /* High z-index to stay on top */
+}
+
+/* Toggle the sidebar width */
+.sidebar.open {
+    width: 250px; /* Width of the open sidebar */
+}
+
+/* Sidebar link styles */
+nav ul {
+    list-style-type: none;
+    width: 100%;
+    padding-top: 50px; /* Adjust this value as needed to move items down */
+    padding-left: 0; /* Remove default padding */
+    margin: 0;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+}
+
+nav ul li {
+    /* width: 100%; */
+    padding: 25px 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #0066cd;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+/* Sidebar icon styles */
+.icon {
+    /* min-width: 20px; */
+    margin-right: 20px;
+}
+
+
+/* Toggle button styles */
+.toggle-button {
+    background-color: #001a33;
+    border: none;
+    color: white;
+    padding: 15px 0;
+    font-size: 25px;
+    cursor: pointer;
+    width: 100%; /* Make the button full width of the sidebar */
+    display: flex; /* Use flexbox to center the icon */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    /* position: absolute; */
+    /* top: 10px;
+    left: 10px; */
+    /* z-index: 16; */
+}
+
+.sidebar.closed .toggle-button {
+    padding-right: 0px;
+}
+
+/* Style for icons when sidebar is open */
+.sidebar.open .toggle-button {
+    padding-right: 50px;
+}
+
+.toggle-button:hover {
+    background-color: transparent; /* Make the hover background transparent */
+}
+
+.toggle-button i {
+    display: block; /* May help with centering in some cases */
+    line-height: 1; /* Adjust line-height to ensure vertical centering */
+    text-align: center; /* Ensure the icon text is centered */
+    margin-left: 7px;
+}
+
+.toggle-button img {
+    width: 40px; /* Example size, adjust as needed */
+    height: 40px; /* Example size, adjust as needed */
+    object-fit: contain; /* This will ensure the image keeps its aspect ratio */
+    margin-left: 7px;
+}
+
+.app-name {
+    color: #0066cd; /* Adjust color as needed */
+    font-weight: 500;
+    font-size: 20px; /* Adjust size as needed */
+    margin-left: 10px; /* Space between icon and text */
+}
+
+/* Hide text labels when sidebar is closed */
+.sidebar.closed span,
+.sidebar.closed .profile-name,
+.sidebar.closed .logout-item span {
+    /* display: none; */
+    visibility: hidden;
+}
+
+/* Show text labels when sidebar is open */
+.sidebar.open span,
+.sidebar.open .profile-name,
+.sidebar.open .logout-item span {
+    /* display: block; */
+    visibility: visible;
+}
+
+.profile-container1 {
+    padding: 130px 20px; /* Adjust as needed */
+    order: 2;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the start */
+    width: 100%; /* Take full width to align with other items */
+}
+
+.profile-container {
+    position: fixed; /* Fixed position relative to the viewport */
+    bottom: 0px; /* Adjust as needed to set the distance from the bottom */
+    left: 0; /* Align with the left edge of the viewport */
+    width: 60px; /* Match the width of your sidebar when it's collapsed */
+    z-index: 20; /* Ensure it's above other content */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the content when the sidebar is collapsed */
+}
+
+/* When sidebar is closed, hide the username and adjust icon */
+.sidebar.closed .profile-container {
+    justify-content: center; /* Center the profile picture */
+}
+
+
+.sidebar.closed .profile-name,
+.sidebar.closed .profile-dropdown-icon {
+    display: none; /* Hide the name and dropdown icon */
+}
+
+
+/* Adjust profile container and name for the open sidebar */
+.sidebar.open .profile-container {
+    margin-left: -5px;
+    transform: none; /* Remove transform when sidebar is open */
+    flex-direction: row; /* Layout items horizontally */
+    justify-content: flex-start; /* Align items to the start */
+}
+
+/* Profile picture styles */
+.profile-picture {
+    max-width: 40px; /* Adjust width as needed */
+    max-height: 40px; /* Adjust height as needed */
+    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Make it round */
+    object-fit: cover; /* Handle different aspect ratios */
+    border: 2px solid #0066cd; /* Adds a white border around the picture */
+    order: 1;
+}
+
+
+.profile-name{
+    display: none; /* Hide by default */
+    color:#0066cd;
+    order: 2;
+    margin-left: 15px; /* Add space between picture and name */
+    margin-bottom: 20px;
+}
+
+/* Show profile name when sidebar is open */
+.sidebar.open .profile-name {
+    display: block; /* Show the profile name */
+}
+
+
+/* Additional adjustments may be needed for the alignment of the profile picture when sidebar is open */
+.sidebar.open .profile-picture {
+    align-self: center; /* Align the picture in the center of the flex item */
+}
+
+nav ul li a i {
+    margin-right: 15px; /* Adjust this value to increase the space between the icon and text */
+}
+
+/* Adjustments for active link or hover state */
+nav ul li a.active,
+nav ul li a:hover {
+    transform: scale(1.1);
+}
+
+.material-icons-outlined {
+    font-size: 25px; /* Increased size of the icon itself */
+}
+
+/* Style for icons when sidebar is closed */
+.sidebar.closed .material-icons-outlined {
+    color: #0066cd; /* Color of icons when sidebar is closed */
+}
+
+/* Style for icons when sidebar is open */
+.sidebar.open .material-icons-outlined {
+    color: #004080; /* Color of icons when sidebar is open */
+}
+
+.profile-dropdown-icon {
+    cursor: pointer; /* Makes the icon clickable */
+    color: #0066cd; /* Icon color */
+    font-size: 30px; /* Icon size, adjust as needed */
+    margin-left: 40px; /* Space between the username and the icon */
+    margin-bottom: 20px;
+    /* Align the icon vertically */
+    display: flex;
+    align-items: center;
+    align-self: center;
+    order: 3; 
+}
+
+
+.dropdown-menu {
+    position: absolute; /* Position the dropdown relative to its container */
+    bottom: 40px; /* Align the top of the dropdown with the top of the sidebar */
+    left: 256px; /* Position the dropdown to the right of the sidebar */
+    background-color: #001a33; /* Background color of the dropdown */
+    /* border: 1px solid #0066cd; */
+    border-radius: 0 5px 5px 0; /* Rounded corners on the right side */
+    width: 200px; /* Width of the dropdown */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: add some shadow for depth */
+    z-index: 100; /* Ensure the dropdown is above other content */
+}
+
+/* Style each item in the dropdown */
+.dropdown-item {
+    display: flex; /* Changed from block to flex */
+    align-items: center; /* Center items vertically */
+    padding: 10px 15px; /* Padding for the dropdown items */
+    color: #0066cd; /* Text color for the dropdown items */
+    text-decoration: none; /* No underline for the dropdown links */
+    white-space: nowrap; /* Prevent wrapping of text */
+}
+
+/* Hover effect for dropdown items */
+.dropdown-item:hover {
+    background-color: transparent; /* Background color of item on hover */
+}
+
+/* Show the dropdown menu when profile container is clicked */
+.profile-container:hover + .dropdown-menu,
+.dropdown-menu:hover {
+    /* transform: translateY(0); */
+    visibility: visible; /* Show the dropdown */
+    opacity: 1; /* Make the dropdown fully opaque */
+}
+
+/* Hide the dropdown when the sidebar is closed */
+.sidebar.closed .dropdown-menu {
+    visibility: hidden;
+    opacity: 0;
+    /* transform: translateY(100%); */
+}

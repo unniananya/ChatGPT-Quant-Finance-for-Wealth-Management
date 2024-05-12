@@ -1,0 +1,23 @@
+.floating-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000; /* Ensures the button is on top of other elements */
+  padding: 15px 25px;
+  border-radius: 50px;
+  background-color: #0066cd; /* Changed to the primary color */
+  color: #F1F8FF; /* Changed to the secondary color */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s; /* Added transform transition for a subtle "press" effect on click */
+  font-family: 'Poppins', sans-serif; /* Set font to Poppins */
+
+  &:hover {
+    background-color: #001a33; /* Darkened primary color for hover state */
+    transform: scale(0.95); /* Subtle "press" effect on hover */
+  }
+
+  &:active {
+    transform: scale(0.9); 
+  }
+}

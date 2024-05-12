@@ -1,0 +1,62 @@
+.welcome-container {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    /* color: #1d2124; */
+    background-color: #000d1a;
+    text-align: center;
+}
+
+.welcome-header {
+    display: flex; /* New flex container for the header */
+    flex-direction: row; /* Align children horizontally */
+    align-items: center; /* Align children vertically */
+    margin-bottom: 40px; /* Add some space above the buttons */
+}
+
+.welcome-icon {
+    width: 100px; /* Or your desired size */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 20px; /* Add some space between the icon and the text */
+}
+
+
+
+.welcome-container h1 {
+    font-weight: 500;
+    font-size: 4em; /* Adjust size as needed */
+    margin: 0; /* Remove margin to align text closely with the icon */
+    color: #0066cd;
+}
+
+.welcome-actions {
+    display: flex;
+    gap: 1em; /* Spacing between buttons */
+}
+
+.btn-welcome {
+    display: inline-block; /* Inline-block elements can have a width and height */
+    text-decoration: none;
+    padding: 0.8em 1.5em;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    box-sizing: border-box; /* Include padding and border in the width and height */
+    width: 150px; /* Set a fixed width */
+    height: 50px; /* Set a fixed height */
+    text-align: center; /* Center the text horizontally */
+    transition: background-color 0.3s, transform 0.3s; /* Added transform transition */
+    /* background-color: transparent;  */
+    background-color: #001a33;
+    color: #0066cd; 
+    /* border: 2px solid #0066cd; */
+}
+
+
+.btn-welcome:hover {
+    /* background-color: #0067cd34;  */
+    /* font-weight: 520; */
+    transform: scale(1.05); /* Slightly scale up on hover */
+}

@@ -1,0 +1,85 @@
+.login-container {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #000d1a; 
+    /* color: #1d2124; */
+}
+
+.login-title {
+    font-weight: 500;
+    font-size: 1.6em;
+    color: #fff;
+}
+
+.login-subtitle {
+    font-weight: 400;
+    font-size: 1.1em;
+    margin-bottom: 40px;
+    color: #9e9e9e;
+}
+
+.login-container .input-icon-wrapper {
+    position: relative;
+    width: 80%;
+    max-width: 300px;
+}
+
+.login-container .input-icon {
+    position: absolute;
+    right: 10px; /* Adjust as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9e9e9e; /* Adjust color as needed */
+}
+
+.login-input {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9em;
+    padding: 0.8em 1.5em;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFFFFF; /* White background for inputs */
+    color: #3e4f60; /* Consistent with your other text colors */
+    width: 100%;
+    max-width: 300px;
+    padding-right: 40px;
+}
+
+.login-button {
+    margin: 0;
+    margin-top: 40px;
+    /* font-size: 0.9em; */
+    text-decoration: none;
+    padding: 0.8em 1.5em;
+    width: 150px; /* Set a fixed width */
+    height: 50px; /* Set a fixed height */
+    text-align: center;
+    line-height: 20px;
+    background-color: #001a33; 
+    color: #0066cd; 
+    /* border: 2px solid #0066cd; */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.login-button:hover {
+    background-color: #001a33; 
+    /* font-weight: 520; */
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+.login-error {
+    color: red;
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+
+/* .login-input, .login-button {
+    box-sizing: border-box;
+} */

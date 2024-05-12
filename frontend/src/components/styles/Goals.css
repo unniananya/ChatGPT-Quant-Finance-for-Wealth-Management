@@ -1,0 +1,308 @@
+.goals-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #000d1a;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Style for the navigation buttons container */
+.goals-container .goal-navigation {
+    display: flex;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 2px solid #0066cd;
+    overflow: hidden; /* Ensures the child buttons don't overflow the rounded corners */
+    margin-bottom: 30px;
+    margin-right: 40px;
+}
+
+/* Style for the navigation buttons */
+.goals-container .nav-button {
+    background-color: transparent; /* White background for inactive buttons */
+    color: #0066cd; /* Text color to match the active button background */
+    padding: 10px 20px;
+    border-radius: 0%;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    text-align: center;
+    flex: 1; /* Each button takes up equal space */
+    margin: 0; /* Remove any default margins */
+    white-space: nowrap;
+}
+
+.goals-container .nav-button:not(:first-child) {
+    border-left: 2px solid #0066cd; /* Border to separate buttons */
+}
+
+/* Hover effect for buttons */
+.goals-container .nav-button:hover:not(.active) {
+    background-color: #001a33; /* Light grey background on hover */
+    color: #0066cd; /* Ensure text color stays blue to match border */
+}
+
+/* Active button style */
+.goals-container .nav-button.active {
+    background-color: #0066cd; /* Active button color */
+    color: #000d1a; /* White text color for active button */
+    font-weight: 500;
+}
+
+.goals-container .goal-details {
+    background-color: #000d1a;
+    border-left: 1px solid #676767;
+    border-radius: 0;
+}
+
+
+.goals-container .goals-list {
+    flex: 1.5; /* Increase this value to give more space to the goals list */
+    margin: 0 10px;
+    padding-left: 80px;
+}
+
+.goals-container .goal-details {
+    flex: 1; /* Decrease this value to give less space to the goal details */
+    background-color: #000d1a;
+    border-left: 1px solid #676767;
+    border-radius: 0;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.goals-container .goal-item {
+    background-color: #000d1a;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Remove default margins from all <p> elements within .goal-item */
+.goals-container .goal-item p {
+    margin: 10px;
+}
+
+.goals-container .goal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* This will vertically center align items if they have different heights */
+}
+
+.goals-container .goal-name {
+    color: #989898;
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+.goals-container .goal-date {
+    margin-left: auto;
+    padding-right: 90px; /* Adjust as needed */
+    color: #989898;
+    font-size: 1em;
+}
+
+.goals-container .goal-item:hover {
+    /* background-color: #e0e0e0; */
+    transform: scale(1.02);
+}
+
+.goals-container .add-goal-form, .goal-details {
+    padding: 20px;
+    background-color: #000d1a;
+    /* border-radius: 10px; */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.goals-container .add-goal-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.goals-container .add-goal-form input, .goals-container .add-goal-form select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Poppins', sans-serif; /* Set font to Poppins */
+}
+
+/* Label styling */
+.goals-container .add-goal-form label {
+    display: block;
+    color: #989898; /* Change the color as needed to suit your theme */
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+  
+  /* Input styling */
+.goals-container .add-goal-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px; /* Spacing between the inputs */
+    border: 1px solid #ddd; /* Light grey border */
+    border-radius: 4px; /* Rounded borders for the input fields */
+    box-sizing: border-box; /* To make sure padding doesn't affect the overall width */
+}
+
+
+.goals-container .add-goal-form button[type="submit"],
+.goals-container .add-goal-form button[type="button"] {
+  width: auto; /* Adjust to auto or a specific width as desired */
+  display: inline-block; /* Allows you to set a width less than 100% */
+  margin-right: 30px; /* Add space between the buttons */
+  background-color: #001a33; /* Green background */
+  color: #0066cd; /* White text */
+}
+
+/* Center the buttons container if needed */
+.goals-container .add-goal-form .button-container {
+  text-align: center; /* Center align the buttons */
+}
+
+/* Adjust padding and margin of the form to ensure it looks good with shorter buttons */
+.goals-container .add-goal-form {
+  padding: 20px;
+}
+
+/* Button styling */
+.goals-container .add-goal-form button {
+    padding: 10px 15px;
+    margin-top: 10px; /* Spacing above the button */
+    border: none;
+    border-radius: 4px; /* Rounded borders for the button */
+    cursor: pointer;
+    width: 100%; /* Full width buttons */
+}
+  
+.goals-container .add-goal-form button:hover {
+    background-color: #001a33; 
+    /* font-weight: 520; */
+    transform: scale(1.1); /* Slightly scale up on hover */
+    transition: transform 0.2s ease;
+}
+  
+
+
+.goals-container .progress-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.goals-container .progress-container {
+    position: relative; /* Needed for absolute positioning of children */
+    background-color: #001a33;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 30px;
+}
+
+.goals-container .progress-bar {
+    position: relative; /* This makes it the positioning context for the progress-amount */
+    background-color: #0066cd;
+    transition: width 0.4s ease;
+    height: 30px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center; /* Center the amount vertically */
+    justify-content: flex-end; /* Align the amount to the right */
+    padding-right: 10px; /* Space from the right edge */
+}
+
+.goals-container .progress-amount {
+    position: absolute; /* Positioned inside the progress-bar */
+    right: 0; /* Align to the right edge of the progress-bar */
+    color: white; /* Change text color for better visibility */
+    font-size: 1em; /* Adjust as needed */
+    font-weight: 500; /* Make it bold */
+    white-space: nowrap; /* Keep it in a single line */
+    margin-right: 10px;
+}
+
+
+.goals-container .progress-percentage-outside {
+    /* You can adjust this as needed to align the percentage text with the progress bar */
+    white-space: nowrap;
+    margin-left: 10px;
+    color: #0066cd;
+    font-size: 1.4em;
+    font-weight: 500;
+}
+
+.goals-container .add-goal-container {
+    display: flex;
+    align-items: center; /* Ensures vertical alignment */
+    justify-content: flex-start; /* Aligns items to the left */
+    gap: 10px; /* Space between button and message */
+    margin-bottom: 40px;
+  }
+  
+  .goals-container .add-goal-button {
+    /* Your styles for the button */
+    margin-bottom: 0; /* Make sure there is no margin pushing the button down */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #001a33; /* Example button color */
+    color: #0066cd;
+    gap: 5px; 
+  }
+
+  .goals-container .add-goal-button:hover {
+    background-color: #001a33; 
+    /* font-weight: 520; */
+    transform: scale(1.1); /* Slightly scale up on hover */
+    transition: transform 0.2s ease;
+}
+
+  .goals-container .add-goal-button .material-icons {
+    font-size: 1.2em; /* Adjust icon size as needed */
+    /* If you want the icon to be vertically centered with the text,
+       you might need to adjust line-height or padding here */
+  }
+  
+  .goals-container .feedback-message {
+    padding: 0 20px; /* Horizontal padding, remove vertical padding if it's causing misalignment */
+    font-size: 1rem; /* Set font size */
+    line-height: 40px; /* Set line height to the height of the button for vertical centering */
+    height: 40px; /* Height should match the button for alignment */
+    margin: 0; /* Remove any margin */
+    background-color: #ffdddd;
+    color: #d8000c;
+    border: 1px solid #d8000c;
+    border-radius: 5px;
+    min-width: 200px; /* Adjust as necessary */
+    display: flex;
+    align-items: center; /* Aligns text vertically */
+    justify-content: center; /* Centers text horizontally */
+    white-space: nowrap; /* Prevents wrapping to a new line */
+  }
+
+
+.goals-container .input-icon-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.goals-container .input-icon {
+    position: absolute;
+    right: 10px; 
+    top: 35%;
+    transform: translateY(-50%);
+    color: #9e9e9e; /* Adjust color as needed */
+}
+
+/* This will hide the browser's default calendar icon */
+.goals-container input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+}

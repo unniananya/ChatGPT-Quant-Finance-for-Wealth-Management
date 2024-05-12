@@ -1,0 +1,1818 @@
+.portfolio-page {
+    display: flex;
+    flex-direction: row;
+    /* min-height: 100vh; */
+    align-items: stretch; 
+    background-color: #000d1a; /* Dark blue background */
+    color: white; /* White text color */
+    width: 100%;
+    overflow: hidden;
+}
+
+
+.portfolio-page .left-section {
+    min-height: 100vh;
+    width: 30%; /* Adjusted from flex-basis to width for clarity */
+    border-right: 2px solid #676767; /* Vertical line */
+    padding: 0 70px; /* Padding inside the left section */
+    box-sizing: border-box; /* Include padding in the width */
+    overflow: hidden;
+}
+
+
+
+/* Additional styles for the portfolio list */
+.portfolio-page .portfolio-list {
+    display: flex;
+    align-items: center;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 50px; /* Space between buttons */
+    margin-top: 20px; /* Space above the first button */
+}
+
+/* Style for individual portfolio buttons */
+.portfolio-page .portfolio-list button {
+    background-color: #001a33; /* Darker background for buttons */
+    color: #0066cd; /* White text color for buttons */
+    border-left: 4px solid #0066cd; 
+    /* border: 2px solid #0066cd; */
+    border-radius: 0px;
+    padding: 12px;
+    text-align: left; /* Align text to the left */
+    cursor: pointer; /* Cursor on hover over the buttons */
+    width: 350px
+}
+
+.portfolio-page .portfolio-list button:hover{
+    background-color: #001a33;
+}
+
+
+.portfolio-page .portfolio-list .active-portfolio-btn {
+  background-color: #0066cd; /* Or any other color you want for active state */
+  border-left: 4px solid #001a33; 
+  font-weight: 500;
+  color: #001a33; /* Text color for active state */
+}
+
+.portfolio-page .portfolio-list .active-portfolio-btn:hover {
+  background-color: #0066cd; /* Or any other color you want for active state */
+  border-left: 4px solid #001a33; 
+  color: #001a33; /* Text color for active state */
+  font-weight: 500;
+  transform: scale(1);
+}
+
+
+/* Style for the 'Create Portfolio' button */
+.portfolio-page .create-portfolio-btn {
+    margin-top: 70px;
+    margin-left: 20px;
+    margin-bottom: 0; /* Make sure there is no margin pushing the button down */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #001a33; /* Example button color */
+    color: #0066cd;
+    gap: 5px; 
+}
+
+.portfolio-page .choose-portfolio{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 1em;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    color: #9E9E9E;
+}
+
+.portfolio-page .right-section {
+    min-height: 100vh;
+    width: 70%; /* Adjusted from flex-basis to width */
+    padding: 20px; /* Padding inside the right section */
+    display: flex;
+    flex-direction: column; /* Vertical alignment of form elements */
+    align-items: flex-start; /* Align form elements to the start */
+}
+
+.portfolio-page .create-portfolio-heading{
+  font-size: 1.4em;
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+.portfolio-page .create-portfolio-subheading{
+  font-size: 0.9em;
+  font-weight: 500;
+  color: #9E9E9E;
+}
+
+.portfolio-page .portfolio-form {
+    margin-top: 30px;
+    width: 100%; /* Form takes full width of its container */
+}
+
+.portfolio-page .form-group {
+  display: flex; /* Use Flexbox */
+  align-items: center; /* Align items vertically */
+  margin-bottom: 80px; /* Space between form groups */
+  margin-left: 30px;
+  flex-wrap: wrap; /* Wrap items to next line if not enough space */
+}
+
+.portfolio-page .form-group label {
+    display: block; /* Label on its own line */
+    margin-bottom: 20px; /* Space between label and input/button */
+    flex-basis: 100%; /* Ensure label takes full width */
+}
+
+/* Styles for form elements */
+.portfolio-page .form-group input[type="text"],
+.portfolio-page .form-group select {
+  width:800px; /* Adjust width to auto */
+  padding: 10px; /* Padding inside the input */
+  border: 1px solid #ccc; /* Border color */
+  border-radius: 4px; /* Rounded corners */
+  color: black;
+  background-color: white; /* White background for inputs */
+  font-family: 'Poppins', sans-serif; /* Set font to Poppins */
+  margin-right: 10px; /* Space between input and error message */
+}
+
+
+.portfolio-page .portfolio-error-message {
+  color: #d8000c; /* Error message color */
+  font-size: 0.9em; /* Adjust font size */
+  font-weight: 500;
+  margin-left: 10px; /* Space from the input */
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+
+.portfolio-page .form-group .template-portfolio{
+  display: block; /* Label on its own line */
+  margin-bottom: 2px; /* Space between label and input/button */
+}
+
+
+.portfolio-page .template-setup{
+  font-size: 0.8em;
+  font-weight: 500;
+  color: #9E9E9E;
+  margin-bottom: 30px;
+}
+
+.portfolio-page .template-options {
+    display: flex; /* Display options in a row */
+    flex-basis: 100%; /* Take full width */
+    margin-top: 10px; /* Space from the last form-group element */
+}
+
+.portfolio-page .template-option-button {
+    padding: 10px 20px; /* Padding inside the buttons */
+    margin-right: 10px; /* Space between buttons */
+    cursor: pointer; /* Cursor on hover over the buttons */
+    background-color: #001a33; /* Green background */
+    color: #0066cd; /* White text */
+    
+}
+
+.portfolio-page .template-option-button.selected {
+    background-color: #4a5a8a; /* Background color for the selected button */
+    color: white; /* Text color for the selected button */
+}
+
+.portfolio-page .template-option-button.disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  background-color: #001a33; /* Green background */
+  color: #0066cd; /* White text */
+}
+
+.portfolio-page .submit-portfolio {
+    padding: 10px 20px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background-color: rgba(229, 0, 0, 0.2); /* Light red background for negative return */
+    color: rgb(165, 0, 0); /* Darker red text color for negative return */
+    cursor: pointer; /* Cursor on hover over the submit button */
+}
+
+.portfolio-page .portfolio-details-header {
+  /* position: relative; */
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+
+.portfolio-page .portfolio-details-heading{
+  font-size: 1.5em;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-left: 20px;
+  /* margin-right: 35px; */
+}
+
+.portfolio-page .deposit-money-btn {
+  position: absolute; /* Position the button absolutely within its parent */
+  right: 0px; /* Adjust this value as needed */
+  margin-right: 150px;
+  padding: 7px 15px;
+  background-color: rgba(0, 229, 0, 0.2); /* Light green background */
+  color: rgb(0, 165, 0); /* Green text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s, transform 0.2s;
+  display: inline-flex; /* Use inline-flex to keep button's inline behavior */
+  align-items: center; /* Vertically center the button's contents */
+  justify-content: center; /* Horizontally center the button's contents */
+}
+
+.portfolio-page .deposit-money-btn .material-icons-outlined {
+  font-size: 1em;
+  margin-right: 5px; 
+}
+
+.portfolio-page .deposit-money-btn:hover {
+  /* background-color: #45a049; Darker shade of green */
+  transform: scale(1.1); /* Slightly increase size */
+}
+
+
+.portfolio-page .portfolio-details-subheading{
+  font-size: 1.1em;
+  font-weight: 500;
+  color: #9e9e9e;
+  /* margin-top: 20px; */
+  margin-left: 20px;
+}
+
+
+.portfolio-page .search-header {
+  color: white;
+  /* margin-top: 20px; */
+  margin-bottom: 20px;
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Align vertically */
+  /* justify-content: space-between; */
+}
+
+
+.portfolio-page .search-header h3{
+  font-size: 1em;
+  font-weight: 500;
+  font-style: italic;
+}
+
+
+.portfolio-page .search-header-spacer {
+  flex-grow: 1; /* Takes up all available space */
+  margin-left: 300px; /* 300px left margin */
+}
+
+.portfolio-page .clear-search-btn {
+  cursor: pointer;
+  padding: 5px 7px;
+  font-size: 0.9em; /* Smaller font size */
+  background-color: rgba(229, 0, 0, 0.2); /* Light red background */
+  color: rgb(165, 0, 0); /* Red text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  display: flex; /* Use flexbox */
+  align-items: center; /* Align items vertically */
+  justify-content: center; /* Center content horizontally */
+  text-transform: none; /* Remove uppercase styling if any */
+  /* margin-left: auto; */
+  margin-left: 350px;
+}
+
+/* Align the material icon with text */
+.portfolio-page .clear-search-btn .material-icons-outlined {
+  font-size: 1em; /* Align icon size with text */
+  margin-right: 2px; /* Space between icon and text */
+}
+
+
+/* Styles for the stock list scrolling functionality */
+.portfolio-page .stock-list-controls {
+    display: flex; /* Use flex layout */
+    align-items: center; /* Center items vertically */
+    gap: 10px; /* Add space between the buttons and the stock list */
+    margin-bottom: 20px; /* Space below the stock list controls */
+}
+
+.portfolio-page .scroll-btn{
+    padding: 10px 20px; /* Button padding */
+    background-color: #001a33; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    cursor: pointer; /* Cursor pointer */
+    user-select: none; /* Prevent text selection */
+}
+
+
+.portfolio-page .stock-list-container {
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: hidden;
+    white-space: nowrap; /* Ensure all items are in a single line */
+    margin: 0 10px; /* Margin on the sides */
+    scrollbar-width: thin; /* Make scrollbar thinner */
+    scrollbar-color: #888 #000; /* Scrollbar styling */
+    width: calc(100% - 4660px); /*Adjust 80px to the combined width of both scroll buttons*/
+}
+
+.portfolio-page .stock-list-container::-webkit-scrollbar {
+  height: 8px; /* Height of the scrollbar */
+}
+
+.portfolio-page .stock-list-container::-webkit-scrollbar-track {
+  background: #000; /* Track color */
+}
+
+.portfolio-page .stock-list-container::-webkit-scrollbar-thumb {
+  background-color: #001a33; /* Thumb color */
+  border-radius: 10px; /* Round the corners of the scrollbar thumb */
+}
+
+.portfolio-page .stock-list {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 10px 0; /* Padding on top and bottom */
+    margin-bottom: 20px;
+}
+
+.portfolio-page .stock-item {
+    flex: 0 0 auto;
+    /* display: inline-flex; */
+    flex-direction: column; /* Stack children elements vertically */
+    /* border: 1px solid #989898; */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #001a33; /* Background color */
+    padding: 15px; /* Padding inside the stock items */
+    width: 420px; /* Width of each stock item */
+    box-sizing: border-box;
+}
+
+.portfolio-page .stock-item:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05); /* Slightly scale up on hover */
+    transition: transform 0.3s ease;
+}
+
+
+.portfolio-page .stock-item:last-child {
+    margin-right: 40px;
+}
+
+
+.portfolio-page .search-stock-item {
+  flex: 0 0 auto;
+  /* display: inline-flex;  */
+  flex-direction: column; /* Stack children elements vertically */
+  /* border: 1px solid #989898; */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #001a33; /* Background color */
+  padding: 15px; /* Padding inside the stock items */
+  width: 420px; /* Width of each stock item */
+  box-sizing: border-box;
+  margin-left: 65px;
+}
+
+.portfolio-page .search-stock-item:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05); /* Slightly scale up on hover */
+  transition: transform 0.3s ease;
+}
+
+
+.portfolio-page .search-stock-item:last-child {
+  margin-right: 40px;
+}
+
+
+.portfolio-page .stock-info {
+    font-size: 14px; /* Smaller text size for stock information */
+    margin-bottom: 5px; /* Space between info lines */
+}
+
+/* Add a new class for the stock symbol */
+.portfolio-page .stock-item h2 {
+  color: #fff; 
+  font-size: 1.5em; 
+  font-weight: 600;
+}
+
+
+.portfolio-page .stock-item h3 {
+  color: #989898; 
+  font-size: 1.1em; 
+  font-weight: 500;
+}
+  
+  /* Add a new class for the stock price and daily change */
+.portfolio-page .stock-item .stock-info {
+    color: #989898;
+    font-size: 1em; 
+  }
+  
+  
+  /* This targets the paragraphs inside the stock-info class, assuming you've wrapped your price and daily change text as suggested earlier */
+.portfolio-page .stock-item .stock-info p {
+    display: flex;
+    justify-content: space-between; /* Aligns the label to the left and the value to the right */
+    margin-top: 10px; /* Adjust top margin as needed */
+    margin-bottom: 5px; /* Adjust bottom margin as needed */
+    color: #fff;
+    font-size: 0.9em;
+  }
+  
+.portfolio-page .stock-item .stock-info .value {
+    margin-left: auto; /* Pushes the value to the right */
+    background-color: rgba(0, 102, 205, 0.2);
+    color: #0066cd; 
+    /* background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;  */
+    padding: 1px 5px;
+    border-radius: 5px;
+}
+
+
+/* Add a new class for the stock symbol */
+.portfolio-page .search-stock-item h2 {
+  color: #fff; 
+  font-size: 1.5em; 
+  font-weight: 600;
+}
+
+
+.portfolio-page .search-stock-item h3 {
+  color: #989898; 
+  font-size: 1.1em; 
+  font-weight: 500;
+}
+  
+  /* Add a new class for the stock price and daily change */
+.portfolio-page .search-stock-item .stock-info {
+    color: #989898;
+    font-size: 1em; 
+  }
+  
+  
+  /* This targets the paragraphs inside the stock-info class, assuming you've wrapped your price and daily change text as suggested earlier */
+.portfolio-page .search-stock-item .stock-info p {
+    display: flex;
+    justify-content: space-between; /* Aligns the label to the left and the value to the right */
+    margin-top: 10px; /* Adjust top margin as needed */
+    margin-bottom: 5px; /* Adjust bottom margin as needed */
+    color: #fff;
+    font-size: 0.9em;
+  }
+  
+.portfolio-page .search-stock-item .stock-info .value {
+    margin-left: auto; /* Pushes the value to the right */
+    background-color: rgba(0, 102, 205, 0.2);
+    color: #0066cd; 
+    /* background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;  */
+    padding: 1px 5px;
+    border-radius: 5px;
+}
+
+.portfolio-page .value-stock.positive-value {
+    background-color: rgba(0, 229, 0, 0.2); /* Light green background */
+    padding: 1px 5px;
+    color: rgb(0, 165, 0); /* Green text color */
+    border-radius: 5px;
+}
+
+.portfolio-page .value-stock.negative-value {
+    background-color: rgba(229, 0, 0, 0.2); /* Light red background */
+    padding: 1px 5px;
+    color: rgb(165, 0, 0); /* Red text color */
+    border-radius: 5px;
+}
+
+/* Add a flex container around the buttons to align them side by side */
+.portfolio-page .stock-item .button-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px; /* Adjust as needed */
+  padding: 0 10px; /* Add padding to the sides if necessary */
+}
+
+/* Styles for the buttons */
+.portfolio-page .stock-item button {
+  flex: 1; /* Each button will take equal width */
+  margin: 0 5px; /* Add some margin between buttons */
+  padding: 10px; /* Keep padding consistent */
+  background-color: #001a33; /* New background color */
+  color: #fff; /* Text color */
+  border: 1px solid #989898; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 0.7em;
+  text-align: center; /* Center the text inside the button */
+}
+
+/* Remove margin from the first and last buttons to maintain even spacing */
+.portfolio-page .stock-item button:first-child {
+  margin-left: 0; /* Remove left margin from the first button */
+}
+
+.portfolio-page .stock-item button:last-child {
+  margin-right: 0; /* Remove right margin from the last button */
+}
+
+.portfolio-page .stock-item button:hover {
+  background-color: transparent;
+}
+
+/* Add this to ensure the transaction modal doesn't pop up when these buttons are clicked */
+.portfolio-page .stock-item button:focus {
+  outline: none; /* Remove outline */
+}
+
+
+
+
+/* Add a flex container around the buttons to align them side by side */
+.portfolio-page .search-stock-item .button-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px; /* Adjust as needed */
+  padding: 0 10px; /* Add padding to the sides if necessary */
+}
+
+/* Styles for the buttons */
+.portfolio-page .search-stock-item button {
+  flex: 1; /* Each button will take equal width */
+  margin: 0 5px; /* Add some margin between buttons */
+  padding: 10px; /* Keep padding consistent */
+  background-color: #001a33; /* New background color */
+  color: #fff; /* Text color */
+  border: 1px solid #989898; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 0.7em;
+  text-align: center; /* Center the text inside the button */
+}
+
+/* Remove margin from the first and last buttons to maintain even spacing */
+.portfolio-page .search-stock-item button:first-child {
+  margin-left: 0; /* Remove left margin from the first button */
+}
+
+.portfolio-page .search-stock-item button:last-child {
+  margin-right: 0; /* Remove right margin from the last button */
+}
+
+.portfolio-page .search-stock-item button:hover {
+  background-color: transparent;
+}
+
+/* Add this to ensure the transaction modal doesn't pop up when these buttons are clicked */
+.portfolio-page .search-stock-item button:focus {
+  outline: none; /* Remove outline */
+}
+
+
+.portfolio-page .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Dimmed background */
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Make sure it's on top of other content */
+}
+
+
+.portfolio-page .advice-modal {
+  padding: 30px;
+  padding-left: 50px;
+  background-color: #001a33;
+  color: #fff;
+  width: 1000px;
+  border-radius: 5px;
+  text-align: left;
+  position: relative; /* For positioning the close button */
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+
+.portfolio-page .advice-header {
+  margin-bottom: 30px;
+  font-size: 1.3em;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 0;
+  font-family: 'Poppins', sans-serif;
+  /* text-decoration: underline;  */
+
+}
+
+.portfolio-page .chatgpt-advice{
+  font-size: 1em;
+}
+
+.portfolio-page .price-chart-modal, .portfolio-page .news-modal, .portfolio-page .recommendation-modal{
+  /* padding: 50px; */
+  background-color: #001a33;
+  color: #fff;
+  border-radius: 20px;
+  text-align: left;
+  position: relative; 
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+
+.portfolio-page .news-modal {
+  position: relative; /* Needed for absolute positioning of the close button */
+  padding-top: 20px;
+  max-height: 100vh; /* Limit the height of the modal to 80% of the viewport height */
+  border-radius: 5px;
+  background-color: #0066cd;
+  /* min-width: 1000px; */
+  margin-left: 400px;
+  margin-right: 400px;
+  /* overflow-y: auto; */
+}
+
+
+.portfolio-page .news-header{
+  /* margin-bottom: 40px; */
+  font-size: 1.2em;
+  font-weight: 500;
+  text-align: left;
+  margin-left: 20px;
+  /* text-decoration: underline;  */
+}
+
+
+.portfolio-page .news-subheader{
+  margin-bottom: 20px;
+  font-size: 0.9em;
+  font-weight: 500;
+  text-align: left;
+  color: white;
+  margin-left: 20px;
+  /* text-decoration: underline;  */
+}
+
+.portfolio-page .news-content {
+  padding: 20px; /* Add padding around the news content */
+  max-height: 75vh; /* Adjust height to ensure close button visibility */
+  /* border-top: 1px solid grey; */
+  overflow-y: auto;
+  /* margin-bottom: 20px; */
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: #001a33;
+  scrollbar-width: thin;
+  scrollbar-color: #000d1a #001a33;
+}
+
+
+/* Styling for scrollbar on Webkit browsers */
+.portfolio-page .news-content::-webkit-scrollbar {
+  width: 6px; /* Reduce the width of the scrollbar */
+  border-radius: 10px; /* Round the corners of the scrollbar */
+}
+
+.portfolio-page .news-content::-webkit-scrollbar-track {
+  background: transparent; /* Make the track transparent or match modal background */
+}
+
+.portfolio-page .news-content::-webkit-scrollbar-thumb {
+  background-color: #fff; /* Match scrollbar thumb to modal color */
+  border-radius: 10px; /* Round the corners of the scrollbar thumb */
+}
+
+
+.portfolio-page .news-date {
+  color: #a5a5a5;
+  font-size: 0.85em;
+  margin-bottom: 5px;
+}
+
+.portfolio-page .news-headline {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+.portfolio-page .news-summary {
+  color: #d1d1d1;
+  font-size: 0.9em;
+  margin-bottom: 15px;
+}
+
+.portfolio-page .news-link {
+  font-size: 0.9em;
+  color: #0096ff; /* Example link color, adjust as needed */
+  text-decoration: none; /* No underline */
+  font-weight: 500; /* Optional: makes it bold */
+  display: inline-block; /* To allow margin-top to take effect */
+}
+
+.portfolio-page .news-link:hover {
+  text-decoration: underline; /* Underline on hover for better UX */
+}
+
+.portfolio-page .news-item:not(:last-child) {
+  border-bottom: 1px solid #333;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+
+/* If the LineChart component doesn't center by default, add this */
+.portfolio-page .recharts-wrapper {
+  margin: auto; /* This will center the chart if it's not already */
+}
+
+.portfolio-page .close-modal-btn {
+position: absolute;
+top: 10px;
+right: 10px;
+border: none;
+padding: 0;
+padding-top: 12px;
+padding-right: 10px;
+background-color: transparent;
+color: white;
+font-size: 11px;
+cursor: pointer;
+}
+
+
+.portfolio-page .close-modal-btn .material-icons-outlined{
+  font-size: 2em;
+}
+
+.portfolio-page .close-modal-btn:hover {
+transform: scale(1.2);
+transition: transform 0.3s ease;
+}
+
+
+
+
+
+
+/* New Chatbot Modal Styles */
+.portfolio-page .new-chatbot-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent */
+    z-index: 1000; /* Ensure it's on top of other elements */
+  }
+  
+  /* New Chat Container Styles */
+  .portfolio-page .new-chat-container {
+    background-color: #001a33;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 600px;
+    /* padding: 20px; */
+  }
+
+  /* Webkit-based browsers */
+  
+  /* New Chat Header Styles */
+  .portfolio-page .new-chat-header {
+    display: flex;
+    align-items: center; /* Keeps items aligned vertically */
+    justify-content: space-between; /* Spreads out the items; logo and title to the left, close button to the right */
+    padding: 15px;
+    /* margin-bottom: 20px; */
+    /* border-bottom: 1px solid #2a334a; */
+  }
+  
+  .portfolio-page .new-chat-logo {
+    height: 40px; /* Adjust as needed */
+  }
+  
+
+.portfolio-page .new-chat-title-div{
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-grow: 1; /* Ensures it takes up as much space as possible, pushing the close button to the right */
+}
+
+  .portfolio-page .new-chat-title {
+    color: white;
+    font-size: 1.1em;
+    flex-grow: 1;
+  }
+
+.portfolio-page .new-chat-subtitle {
+  font-size: 0.8em; /* Adjust the font size as needed */
+  color: #9E9E9E;
+}
+  
+  .portfolio-page .new-close-chatbot {
+    background: none;
+    border: none;
+    padding: 0;
+    padding-top: 0;
+    padding-left: 0.1em;
+    padding-bottom: 0.5em;
+    color: white;
+    cursor: pointer;
+    font-size: 25px;
+  }
+  
+  /* New Chat Messages Styles */
+  .portfolio-page .new-messages {
+    height: 400px;
+    overflow-y: auto;
+    padding: 10px;
+    /* margin-bottom: 10px; */
+    background-color: #000d1a;
+    display: flex;
+    flex-direction: column; /* stack the messages vertically */ 
+    position: relative;
+    scrollbar-width: thin; /* Thin scrollbar for Firefox */
+    scrollbar-color: #001a33 #000d1a; /* Thumb and track color */
+  }
+
+
+  .portfolio-page .new-messages::-webkit-scrollbar {
+    width: 8px; /* Thin scrollbar */
+    height: 8px; /* For horizontal scrollbars, if applicable */
+  }
+  
+  .portfolio-page .new-messages::-webkit-scrollbar-track {
+    background: #001a33; /* Scrollbar track color */
+    border-radius: 10px; /* Rounded corners for the track */
+  }
+  
+  .portfolio-page .new-messages::-webkit-scrollbar-thumb {
+    background-color: #000d1a; /* Scrollbar thumb color */
+    border-radius: 10px; /* Rounded corners for the thumb */
+  }
+
+
+
+.portfolio-page .message {
+    padding: 5px 10px;
+    border-radius: 7px;
+    margin: 5px 0;
+    max-width: 75%; /* Ensures the bubbles don't stretch full width */
+    word-wrap: break-word; /* Ensures words don't overflow the bubbles */
+    display: inline-block;
+}
+  
+  /* .portfolio-page .new-user-message,
+  .portfolio-page .new-assistant-message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+  } */
+  
+  .portfolio-page .new-user-message {
+    background-color: #0066cd;
+    border : none;
+    color: #F1F8FF;
+    align-self: flex-end; /* Message bubble on the right */
+    border-bottom-right-radius: 0; /* Make the bottom-right corner flat */
+    position: relative;
+    margin-right: 40px; /* Make room for the profile picture */
+  }
+
+  .portfolio-page .new-user-message::before {
+    content: '';
+    position: absolute;
+    bottom: -10px; /* Adjust based on your design */
+    right: -40px; /* Adjust based on your design */
+    width: 30px; /* Size of the profile picture */
+    height: 30px; /* Size of the profile picture */
+    background-image: var(--user-pic-url);
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* .portfolio-page .new-assistant-message {
+    background-color: #6c6c6d;
+    border : none;
+    color: #F1F8FF;
+    align-self: flex-start;
+    border-bottom-left-radius: 0; 
+  } */
+
+
+  .portfolio-page .new-assistant-message {
+    position: relative; /* Ensures that the positioning of the pseudo-element is relative to this element */
+    padding: 5px 10px;
+    border-radius: 7px;
+    margin: 5px 0;
+    max-width: 75%;
+    word-wrap: break-word;
+    display: inline-block;
+    background-color: #001a33;
+    color: #F1F8FF;
+    align-self: flex-start;
+    border-bottom-left-radius: 0;
+    margin-left: 40px;
+}
+
+
+.portfolio-page .new-assistant-message::after {
+  content: '';
+  position: absolute;
+  bottom: -10px; /* Adjust based on the size of the logo */
+  left: -40px;
+  width: 30px; /* Adjust the size of the logo */
+  height: 30px; /* Adjust the size of the logo */
+  background-image: url('./images/chatbot.png'); /* Update with the actual path to your chatbot logo */
+  background-size: cover;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Optional: Adds a shadow for depth */
+}
+  
+  /* New Chat Input Area Styles */
+  .portfolio-page .new-input-area {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .portfolio-page .new-chat-container .new-loading-dots {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;  /* This positions the loader inside the input area */
+    right: 55px;  /* This assumes your arrow (Ask button) is about 30px, adjust if needed */
+    top: 50%;
+    transform: translateY(-50%); /* Center vertically */
+    padding: 0 5px;  /* Give some space on both sides of the loader */
+  }
+
+  .portfolio-page .new-chat-container .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;  /* Makes the dots round */
+    background-color: #0066cd;
+    animation: bounce 0.6s infinite alternate;
+}
+
+.portfolio-page .new-chat-container .dot:nth-child(2) {
+    animation-delay: 0.2s;  /* This will make the second dot start its animation a little later */
+}
+
+.portfolio-page .new-chat-container .dot:nth-child(3) {
+    animation-delay: 0.4s;  /* This will make the third dot start its animation a little later */
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-8px);  /* This moves the dot up by its own height */
+    }
+}
+  
+  .portfolio-page .new-input-area input {
+    flex-grow: 1;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 4px;
+    border: 1px solid #2a334a;
+    color: black;
+    background-color: white;
+  }
+  
+  .portfolio-page .new-input-area button {
+    background-color: #0066cd;
+    border: none;
+    padding: 5px 10px;
+    color: #F1F8FF;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif; /* Set font to Poppins */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+
+
+/* Overlay style for the popup */
+.portfolio-page .popup {
+    position: fixed; /* Fix the position relative to the viewport */
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    display: flex; /* Use flexbox to center the child element */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    z-index: 100; /* Ensure it's on top of other elements */
+}
+
+/* Inner style for the popup content */
+.portfolio-page .popup-inner {
+    position: relative;
+    background-color: #001a33; /* White background for the content */
+    padding: 20px;
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle depth effect */
+    width: 100%; 
+    max-width: 1100px; /* Increased maximum width */
+    height: 100%; /* New height */
+    max-height: 450px; /* Maximum height */
+    z-index: 101; /* Ensure it's above the overlay */
+    text-align: center; /* Center the text */
+    color: white; /* Text color */
+}
+
+
+
+.portfolio-page .popup-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.portfolio-page .popup-description {
+  margin-top: 70px;
+  width: 40%;
+  /* padding: 20px; */
+  color: white;
+
+}
+
+.portfolio-page .popup-description p {
+  text-align: left;
+}
+
+
+.portfolio-page .popup-description .popup-des-link {
+  font-size: 1em;
+  font-weight: 500;
+  color: #0066cd;
+}
+
+.portfolio-page .popup-description .popup-des-title {
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+
+.portfolio-page .popup-description .popup-des-subtitle {
+  font-size: 0.9em;
+  margin-top: 5px;
+  color: #9E9E9E;
+  margin-bottom: 10px;
+}
+
+
+.portfolio-page .popup-close-modal-btn {
+  position: absolute; /* Position absolutely relative to .popup-inner */
+  top: 10px; /* Space from the top */
+  right: 10px; /* Space from the right */
+  background: none; /* No background */
+  border: none; /* No border */
+  cursor: pointer; /* Pointer cursor on hover */
+  color: #9E9E9E; /* Text color */
+  font-size: 20px; /* Size of the icon */
+}
+
+.portfolio-page .popup-close-modal-btn span.material-icons-outlined {
+  font-size: inherit; /* Ensure the icon inherits the font-size from the button */
+}
+
+.portfolio-page .popup-inner .chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+
+.portfolio-page .popup-title{
+  font-size: 1.2em;
+  font-weight: 500;
+  margin-top: 20px;
+  /* text-decoration: underline; */
+}
+
+.portfolio-page .popup-subtitle{
+  font-size: 1em;
+  font-weight: 500;
+  color: #9E9E9E;
+  /* text-decoration: underline; */
+}
+
+/* Ensure the pre element (used for JSON display) fits nicely */
+.portfolio-page .popup-inner pre {
+    white-space: pre-wrap; /* Wraps the text */
+    word-break: break-word; /* Breaks long words */
+    text-align: left; /* Align text to the left for readability */
+    max-height: 80%; /* Maximum height for the pre element */
+    overflow-y: auto; /* Scroll if content is too long */
+    margin: 10px 0; /* Margin for spacing */
+}
+
+/* Additional style if you want to animate the popup */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.portfolio-page .popup {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+
+.portfolio-page .search-and-label-container {
+    display: flex; /* Use flexbox to align items vertically */
+    flex-direction: column; /* Stack children vertically */
+    align-items: flex-start; /* Align children to the start of the flex container */
+}
+
+.portfolio-page .buy-sell-heading {
+  margin-top: 50px;
+  margin-left: 10px;
+  font-weight: 500;
+  font-size: 1.1em;
+}
+
+
+.portfolio-page .buy-sell-subheading {
+  margin-left: 10px;
+  font-weight: 500;
+  color: #9e9e9e;
+  font-size: 1em;
+  /* margin-bottom: 20px; */
+}
+  
+  .portfolio-page .popular-stocks-label {
+    color: white; /* Set the text color to blue */
+    margin-top: 20px; /* Add space between the button and the label */
+    margin-bottom: 20px;
+    margin-left: 10px;
+    font-size: 1em;
+    font-weight: 500;
+    font-style: italic;
+  }
+
+.portfolio-page .buy-sell-container {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Use if you want the button pushed to the far right of the container */
+    margin-bottom: 40px;
+    /* margin-top: -40px; */
+    /* margin-left: 10px; */
+    /* width: calc(100% - 20px); */
+}
+
+/* Style for the search button */
+.portfolio-page .search-btn {
+    /* Add your styles here (e.g., padding, font size) */
+    /* margin-bottom: 30px; */
+    /* margin-top: 30px; */
+    /* margin-left: 10px; */
+    margin-left: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    gap: 5px;
+    background-color: #001a33; /* Example button color */
+    color: #0066cd;
+}
+
+/* Overlay styles */
+.portfolio-page .search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2000; /* Make sure it's above everything else */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.portfolio-page .search-popup {
+  background-color: #001a33;
+  max-height: 700px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  max-width: 500px;
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Makes children (input and select) stack vertically */
+}
+
+.portfolio-page .search-popup .search-heading{
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+
+.portfolio-page .search-popup .search-name-heading {
+  font-size: 0.8em;
+  font-weight: 500;
+  color: #9e9e9e;
+  margin-bottom: 5px;
+  margin-top: 20px;
+}
+
+
+.portfolio-page .search-popup .filter-heading {
+  font-size: 0.8em;
+  font-weight: 500;
+  color: #9e9e9e;
+  margin-bottom: 5px;
+}
+
+/* Close button styles */
+.portfolio-page .search-popup .close-search-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: none;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+
+
+/* Styles for the search input to make it full width */
+.portfolio-page .search-popup .search-input {
+  width: 100%; /* Makes the search input full width of the popup */
+  padding: 10px; /* Adds some padding inside the input */
+  /* margin-top: 30px; */
+  margin-bottom: 20px; /* Adds some space between the input and the following element */
+  border: 1px solid #ccc; /* Optional: adds a border to the input */
+  border-radius: 5px; /* Optional: rounds the corners of the input */
+}
+
+
+/* Styles for the asset class dropdown */
+.portfolio-page .search-popup .asset-class-dropdown {
+  width: 80%; /* Makes the dropdown full width of the popup */
+  padding: 10px; /* Adds some padding inside the dropdown */
+  margin-bottom: 20px; /* Adds some space between the dropdown and the search results */
+  border: 1px solid ; /* Optional: adds a border to the dropdown */
+  border-radius: 5px; /* Optional: rounds the corners of the dropdown */
+  align-self: flex-start;
+}
+
+/* Styles for search results within the popup */
+.portfolio-page .search-popup .search-results {
+    margin-top: 20px;
+    max-height: 300px; 
+    overflow-y: auto;
+    border-top: 1px solid #404040;
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #000d1a #001a33; /* For Firefox: thumb and track */
+    
+    /* For Webkit (Chrome, Edge, Safari) */
+    &::-webkit-scrollbar {
+        width: 8px; /* Width of the scrollbar */
+    }
+    &::-webkit-scrollbar-track {
+        background: #001a33; /* Track color */
+    }
+    &::-webkit-scrollbar-thumb {
+        background: #000d1a; /* Thumb color */
+        border-radius: 4px; /* Rounded corners for the thumb */
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: #000d1a; /* Slightly darker shade for hover state */
+    }
+}
+
+/* Adjust the .search-result-item to better layout the stock info */
+.portfolio-page .search-popup .search-result-item {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+  color: white;
+}
+
+.portfolio-page .search-popup .search-result-item:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Optional: Add hover effect */
+}
+
+
+
+.portfolio-page .search-popup .search-stock-name {
+  font-size: 1em; /* Larger font size for the stock name */
+  color: white; /* Stock name color */
+}
+
+.portfolio-page .search-popup .search-stock-symbol {
+  font-size: 0.9em; /* Smaller font size for the stock symbol */
+  color: grey; /* Grey color for the stock symbol */
+  margin-bottom: 5px; /* Space between stock symbol and asset types, if needed */
+}
+
+
+
+
+.portfolio-page .search-popup .asset-type-box {
+  padding: 1px 5px;
+  margin-right: 5px;
+  border-radius: 5px;
+  display: inline-block;
+  font-size: 0.8em; /* Adjust font size as needed */
+}
+
+
+/* Styles for the tags container */
+.portfolio-page .search-popup .tags-container {
+  display: flex;
+  align-self: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 10px; /* Space between tags and dropdown/search input */
+}
+
+/* Styles for individual tags */
+.portfolio-page .search-popup .tag {
+  background-color: #007bff; /* Tag background color */
+  color: #ffffff; /* Tag text color */
+  padding: 5px 10px; /* Tag padding */
+  border-radius: 5px; /* Rounded corners for tags */
+  margin-right: 5px; /* Space between tags */
+  margin-bottom: 5px; /* Space between rows of tags */
+  display: flex;
+  align-items: center;
+  font-size: 0.7em;
+}
+
+.portfolio-page .search-popup .tag .material-icons-outlined{
+  font-size: 0.8em;
+}
+
+.portfolio-page .search-popup .tag button {
+  background: none;
+  padding: 0 0;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+
+ .portfolio-page .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Dimmed background */
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Make sure it's on top of other content */
+  }
+  
+  
+ .portfolio-page .transaction-modal {
+    padding: 30px; /* Increased padding for better spacing */
+    /* border: 1px solid #7b7b7b;  */
+    border-radius: 10px; /* Slightly larger border radius for a modern look */
+    background-color: #001a33; /* Dark background for the modal */
+    color: #fff; /* White text color for better readability on the dark background */
+    width: auto; /* Auto width based on content */
+    max-width: 500px; /* Maximum width of the modal */
+    z-index: 1001; /* Ensures the modal is above the overlay */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* More pronounced shadow for a floating effect */
+  }
+  
+ .portfolio-page .transaction-modal h2 {
+    /* margin-bottom: 20px; */
+    color: #fff; /* Themed color for titles */
+    text-align: left; /* Centering the title */
+    font-size: 1.8em;
+  }
+  
+ .portfolio-page .transaction-modal p {
+    color: #fff; /* Themed color for the symbol text */
+    font-size: 1.1em;
+    text-align: left; /* Centering the symbol text */
+    margin-bottom: 20px; /* Space below the symbol */
+  }
+  
+ .portfolio-page .transaction-modal label {
+    display: block; /* Make the label take the full width */
+    margin-bottom: .5rem; /* Space below the label */
+    color: #989898; /* Lighter text color for labels */
+  }
+    
+ .portfolio-page .transaction-modal input,
+ .portfolio-page .transaction-modal select {
+      width: 100%; /* Make the input take full width of the modal */
+      padding: 10px; /* Larger padding for better touch target */
+      margin-bottom: 20px; /* Space below the input */
+      border: 1px solid #333; /* Darker border for the inputs */
+      background-color: #000d1a; /* Darker background for inputs */
+      color: #fff; /* White text for inputs */
+      border-radius: 5px; 
+      font-family: 'Poppins', sans-serif;
+  }
+    
+ .portfolio-page .transaction-modal .transaction-modal-actions {
+      display: flex;
+      justify-content: space-around; /* Even space around the buttons */
+      align-items: center; /* Vertically center align items */
+  }
+    
+ .portfolio-page .execute-transaction-btn,
+ .portfolio-page .cancel-transaction-btn {
+      flex-grow: 1; /* Buttons take up equal space */
+      margin: 0 10px; /* Space between buttons */
+      margin-top: 20px;
+      padding: 10px 20px; /* Padding top and bottom */
+      border-radius: 5px;
+      font-weight: 500; /* Bold font for buttons */
+  }
+    
+ .portfolio-page .execute-transaction-btn {
+      background-color: #001a33;
+      border: 1px solid #989898;
+  }
+    
+ .portfolio-page .cancel-transaction-btn {
+      background-color: #001a33;
+      border: 1px solid #989898;
+  }
+    
+    /* Hover effects for buttons */
+ .portfolio-page .execute-transaction-btn:hover {
+      background-color: #001a33;
+      transform: scale(1.1); /* Slightly scale up on hover */
+      transition: transform 0.3s ease;
+  }
+    
+ .portfolio-page .cancel-transaction-btn:hover {
+      background-color: #001a33;
+      transform: scale(1.1); /* Slightly scale up on hover */
+      transition: transform 0.3s ease;
+  }
+  
+  /* Optional: If you want to add an animation to the modal appearance */
+ .portfolio-page .transaction-modal {
+    animation: modalFadeIn 0.3s;
+  }
+  
+  @keyframes modalFadeIn {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+
+  .portfolio-page .charts-container {
+    display: flex;
+    justify-content: space-around; /* Centers the charts with space around them */
+    align-items: flex-start;;
+    flex-wrap: wrap; /* Allows charts to wrap into a new row if not enough space */
+    margin-top: 50px; 
+    max-width: 1100px;
+    min-height: 400px; /* Adjust based on your design needs */
+    overflow-y: auto; /* Optional, in case the content overflows */
+}
+
+.portfolio-page .chart {
+    flex: 1; /* Allows charts to grow */
+    /* min-width: 300px; */
+    margin: 10px;
+    width: 550px;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+
+.portfolio-page .chart.no-data {
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 350px; /* Same height as your charts for consistency */
+}
+
+.portfolio-page .no-current-title {
+  color: #9E9E9E;
+  font-style: italic;
+  text-align: center; /* Center the text horizontally */
+}
+
+.portfolio-page .chart-title {
+  margin: 0;
+  padding: 0; /* Removes any padding that could affect positioning */
+  /* padding-top: 10px; */
+  margin-bottom: -90px;
+  color: #9E9E9E;
+  font-size: 1.1em; /* Adjust font size as needed */
+  font-weight: 500;
+  /* text-align: center; */
+}
+
+
+.portfolio-page .target-portfolio-info {
+    color: white;
+    margin-top: 20px;
+    width: 450px;
+    padding: 10px;
+    border: 2px dashed #676767;
+    border-radius: 5px;
+}
+
+
+.portfolio-page .target-portfolio-info h3 {
+  font-size: 1em;
+  font-weight: 600;
+  color: #9e9e9e;;
+}
+
+
+.portfolio-page .target-portfolio-info p {
+  font-size: 0.9em;
+  color: #9e9e9e;
+}
+
+
+.portfolio-page .target-portfolio-info a {
+  font-size: 0.9em;
+  color: #0066cd;
+}
+
+.portfolio-page .price-chart-modal {
+  /* ... existing styles ... */
+  padding: 20px;
+  width: 1300px;
+  display: flex; /* Enables flexbox */
+  flex-direction: column; /* Stacks children vertically */
+  align-items: center; /* Centers children horizontally */
+  justify-content: center; /* Centers children vertically */
+  position: relative;
+  background-color: #001a33;
+  color: #fff;
+  border-radius: 5px;
+
+}
+
+.portfolio-page .price-chart-modal .pattern-heading {
+  font-weight: 500; /* Makes the text bold */
+  font-size: 1.1em;
+  text-align: center; /* Centers the text */
+  margin-left: 60px;
+  width: 100%; /* Ensures the title takes full width of the container */
+  margin-bottom: 20px; /* Adds some space below the title */
+}
+
+
+.portfolio-page .price-chart-modal .pattern-button-container {
+  display: flex; /* Use flex layout */
+  flex-direction: row; /* Align children horizontally */
+  flex-wrap: wrap; /* Allow buttons to wrap onto the next line if not enough space */
+  gap: 5px; /* Gap between buttons */
+  justify-content: center; /* Center buttons within the container */
+  margin-bottom: 20px; /* Space below the button container */
+}
+
+
+.portfolio-page .chart-and-info-container {
+  display: flex; /* Enables flexbox */
+  justify-content: space-between; /* Separates the chart and the info */
+  align-items: flex-start; /* Aligns items to the top */
+  width: 100%; /* Full width to contain both children */
+}
+
+/* To ensure the chart itself is also centered, add styles to its container */
+.portfolio-page .price-chart-container {
+  display: flex;
+  justify-content: center;
+  flex-basis: 70%;
+}
+
+
+.portfolio-page .chart-info {
+  flex-basis: 40%; /* Info section takes up 30% of the container width */
+  padding-top: 20px;
+  font-size: 0.9em; /* Smaller font size for the descriptions */
+  color: #b1b1b1; /* Light grey color for the text */
+  line-height: 1.4; /* Adjust line height for better readability */
+  margin-top: -20px; /* Align the top of the text with the top of the chart */
+}
+
+.portfolio-page .chart-info p {
+  margin-top: 20px;
+}
+
+
+.portfolio-page .pattern-button {
+  padding: 5px 10px;
+  font-size: 0.7em; /* Smaller font size */
+  border: 1px solid #0066cd; /* Matching the line color */
+  background-color: #001a33; /* Dark background */
+  color: #0066cd; /* White text */
+  cursor: pointer; /* Cursor indication for clickable element */
+  border-radius: 4px; /* Rounded corners */
+  text-align: center; /* Center text within button */
+  white-space: nowrap; /* Prevent text wrapping */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Hover effect for buttons */
+.portfolio-page .pattern-button:hover {
+  background-color: transparent; /* Lighter color on hover */
+  transform: scale(1.05); /* Slightly scale up the button */
+}
+
+
+
+.portfolio-page .recommendation-modal{
+  position: relative; /* Needed for absolute positioning of the close button */
+  max-height: 100vh; /* Limit the height of the modal to 80% of the viewport height */
+  border-radius: 5px;
+  padding: 20px 0;
+  padding-bottom: 0;
+  max-width: 920px;
+  background-color: #0066cd;
+}
+
+
+.portfolio-page .recommendation-header{
+  margin-bottom: 20px;
+  font-size: 1.2em;
+  text-align: left;
+  margin-left: 20px;
+  font-weight: 500;
+  /* text-decoration: underline;  */
+}
+
+.portfolio-page .recommendation-section ul {
+  list-style-type: none; /* This removes the bullet points */
+  padding-left: 20px; /* This removes the default padding on the left side */
+  color: white;
+}
+
+.portfolio-page .recommendation-content {
+  padding: 20px; /* Add padding around the news content */
+  padding-bottom: 40px;
+  max-height: 75vh; /* Adjust height to ensure close button visibility */
+  overflow-y: auto;
+  background-color: #001a33;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+
+/* Styling for scrollbar on Webkit browsers */
+.portfolio-page .recommendation-content::-webkit-scrollbar {
+  width: 6px; /* Reduce the width of the scrollbar */
+  border-radius: 10px; /* Round the corners of the scrollbar */
+}
+
+.portfolio-page .recommendation-content::-webkit-scrollbar-track {
+  background: transparent; /* Make the track transparent or match modal background */
+}
+
+.portfolio-page .recommendation-content::-webkit-scrollbar-thumb {
+  background-color: #fff; /* Match scrollbar thumb to modal color */
+  border-radius: 10px; /* Round the corners of the scrollbar thumb */
+}
+
+
+.portfolio-page .recommendation-section h4 {
+  margin-top: 20px;
+  font-size: 1.1em;
+  color: #0066cd; /* Example color for section titles */
+}
+
+.portfolio-page .recommendation-section p {
+  margin-top: 5px;
+  text-align: left;
+}
+
+
+
+/* Container for the buttons */
+.portfolio-page .nav-buttons-container {
+  margin: 70px 0; /* Add some margin above and below the container */
+}
+
+.portfolio-page .nav-buttons-heading {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1em;
+  font-weight: 500;
+  color: #9e9e9e;
+}
+
+/* Common button styles */
+.portfolio-page .navigate-btn {
+  padding: 10px 20px;
+  text-decoration: none; 
+  color: #0066cd; /* Text color */
+  background-color: #001a33; /* Background color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+/* Hover effect */
+.portfolio-page .navigate-btn:hover {
+  background-color: #0056b3;
+}
+
+
+.portfolio-page .navigate-dashboard-btn {
+  margin-right: 20px; /* Adds space to the right of the first button */
+}
+
+/* Or for the second button */
+.portfolio-page .navigate-overview-btn {
+  margin-left: 20px; /* Adds space to the left of the second button */
+}
+
+
+
+.portfolio-page .portfolio-values-container {
+  display: flex;
+  margin-top: 70px;
+  margin-bottom: 80px;
+  justify-content: space-between; /* Space elements out between left and right edges */
+  width: 1000px; /* Use the full width to allow spacing */
+  padding: 0 20px; /* Adjust as needed, adds padding on the sides */
+  padding-left: 80px;
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.portfolio-page .portfolio-cash,
+.portfolio-page .portfolio-value {
+  display: flex;
+  flex-direction: column; /* Stack h2 and h3 vertically */
+  align-items: flex-start; /* Align text to the start (left for cash) */
+}
+
+.portfolio-page .portfolio-value {
+  align-items: flex-end; /* Align text to the end (right for value) */
+}
+
+
+.portfolio-page .portfolio-cash-heading {
+  font-size: 1.1em; /* Set the size for the 'Total value (SGD)' label */
+  display: block; /* Make the label a block to control spacing better */
+  margin-bottom: 10px; /* Reduce space below the label */
+  color: #989898;
+  font-weight: 500;
+}
+
+
+.portfolio-page .portfolio-cash-value {
+  font-size: 3em; /* Increased font size for total value */
+  font-weight: bold;
+  color: #fff;
+  margin-top: 0px;
+}

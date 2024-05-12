@@ -1,0 +1,42 @@
+/* TransactionHistory.css */
+.transaction-history-container {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    padding: 20px;
+    color: #fff;
+    background-color: #001a33;
+    width: 100%;
+    min-height: 100vh; /* At least the full height of the viewport */
+}
+
+.transaction-history-header {
+    align-self: flex-start; /* Aligns the header to the start of the flex container */
+    width: 80%; /* Matches the table width to align text left within the same width */
+    margin-bottom: 50px; /* Optional: Adds some space below the header */
+}
+
+.transactions-table {
+    width: 80%; /* Or any other width you prefer */
+    margin: 0; /* Remove auto margin if you're centering with flexbox */
+    border-collapse: collapse;
+    background-color: transparent;
+}
+
+.transactions-table th,
+.transactions-table td {
+    padding: 10px;
+    border: 1px solid #ddd; /* A light grey border for the cells */
+}
+
+.transactions-table th {
+    background-color: #0059b3; /* A blue background for headers */
+}
+
+.transactions-table td {
+    background-color: #003366; /* A slightly darker background for cells */
+}
+
+.error {
+    color: red;
+}

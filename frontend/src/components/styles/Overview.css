@@ -1,0 +1,317 @@
+.overviewContainer {
+    position: relative;
+    background-color: #000d1a;
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 
+.overviewContainer .portfolio-selector {
+    align-self: flex-start;
+    margin-left: 70px;
+    position: relative;
+    display: inline-block; 
+    width: auto; 
+} */
+
+
+.overviewContainer .portfolio-selector {
+    position: absolute; /* Absolute positioning relative to .overviewContainer */
+    top: 30px; /* Align to the top */
+    left: 100px; /* Align to the left */
+    /* ... other styles ... */
+}
+
+.overviewContainer .portfolio-selector select {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000d1a;
+    color: white;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid #0066cd;
+    width: 100%; /* Adjust the width as necessary, subtract the padding */
+    cursor: pointer; /* Changes the cursor to indicate this is a dropdown */
+}
+
+/* Style options */
+.overviewContainer .portfolio-selector select option {
+    background: #000d1a; /* Ensures the dropdown options match the button style */
+    color: white; /* Text color for the options */
+}
+
+/* Change background color of options on hover */
+.overviewContainer .portfolio-selector select option:hover {
+    background-color: #001a33;
+}
+
+/* You might also need to style the focus state */
+.overviewContainer .portfolio-selector select:focus {
+    outline: none; /* Removes the default outline shown on focus */
+    border: 1px solid #0066cd; /* Adds a custom border style on focus */
+}
+
+/* To style the select dropdown on browsers like Chrome, you might need to force the background-color */
+/* since some browsers use their own styling for options */
+.overviewContainer .portfolio-selector select:-webkit-autofill,
+.overviewContainer .portfolio-selector select:-webkit-autofill:hover, 
+.overviewContainer .portfolio-selector select:-webkit-autofill:focus, 
+.overviewContainer .portfolio-selector select:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #000d1a inset !important;
+    -webkit-text-fill-color: white !important;
+}
+
+
+.overviewContainer .overview-title {
+    align-self: flex-start;
+    margin-top: 80px;
+    margin-left: 80px;
+    font-size: 1.3em;
+    color: white;
+    font-weight: 500;
+    
+}
+
+
+.overviewContainer .overview-subtitle {
+    align-self: flex-start;
+    /* margin-top: 80px; */
+    margin-left: 80px;
+    font-size: 0.9em;
+    color: #9e9e9e;
+    font-weight: 500;
+    margin-bottom: -40px;
+    
+}
+
+
+.overviewContainer .chart-message-container {
+    margin-top: 80px;
+    /* margin-left: 80px; */
+}
+
+
+
+
+.overviewContainer .risk-metrics-container {
+    width: 100%; /* Use 100% width for responsiveness */
+    max-width: 960px; /* Adjust this value based on your design needs */
+    display: flex;
+    flex-direction: column; /* Keeps the layout vertical for the container itself */
+    align-items: center; /* Centers the content vertically */
+    justify-content: center; /* Centers the content horizontally for flex-direction: column */
+    padding: 20px;
+    border: 2px solid #0066cd;
+    margin: 20px auto; /* Centers the container horizontally */
+}
+
+.overviewContainer .risk-metrics-header {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    margin-bottom: 20px; /* Spacing between title and metrics */
+}
+
+.overviewContainer .risk-metrics-title {
+    color: white;
+    font-size: 1.2em;
+    font-weight: 500;
+    text-align: center;
+}
+
+.overviewContainer .risk-metrics-values {
+    display: flex;
+    justify-content: space-around; /* Distributes space around items evenly */
+    align-items: center; /* Aligns items in the center vertically */
+    flex-wrap: nowrap; /* Prevents wrapping to a new line */
+    width: 100%; /* Ensures the container takes the full width */
+}
+
+
+.overviewContainer .risk-metric-container {
+    display: flex;
+    flex-direction: column; /* Arranges title above value */
+    align-items: center; /* Centers items horizontally */
+    justify-content: center; /* Centers items vertically */
+    flex: 1; /* Distributes space equally among items */
+    min-width: 0; /* Allows shrinking below content size if necessary */
+}
+
+.overviewContainer .risk-metrics-container .risk-metric-container:last-child {
+    margin-right: 0; /* Removes the margin on the right for the last risk metric container */
+}
+
+
+.overviewContainer .risk-metric-title, 
+.overviewContainer .risk-metric {
+    white-space: nowrap; /* Prevents wrapping of text */
+    overflow: hidden; /* Hides overflow */
+    text-overflow: ellipsis; /* Adds an ellipsis for overflowed content */
+}
+
+/* Additional styles for visual improvement */
+.overviewContainer .risk-metrics-header .risk-metrics-title {
+    margin-bottom: 10px; /* Adjusts space between header and metrics */
+}
+
+/* Adjustments for responsiveness */
+@media (max-width: 768px) {
+    .overviewContainer .risk-metrics-values {
+        flex-direction: row; /* Aligns items in a row for smaller screens */
+        flex-wrap: wrap; /* Allows wrapping for very small screens */
+        justify-content: center; /* Centers items */
+    }
+
+    .overviewContainer .risk-metric-container {
+        margin: 10px; /* Adds some space around each metric container */
+    }
+}
+
+.overviewContainer .risk-metric-title{
+    color: #989898;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.overviewContainer .risk-metric {
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: rgba(0, 102, 205, 0.2);
+    color: #0066cd;
+}
+
+
+
+.overviewContainer .risk-metric-title, .overviewContainer .risk-metric {
+    text-align: center;
+    margin: 5px 0; /* Adds a little space between the title and value */
+}
+
+
+
+
+/* Style for the toggle button container */
+.overviewContainer .buttonContainer {
+    display: flex;
+    width: 1100px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
+    border-radius: 10px;
+    border: 2px solid #0066cd;
+    /* border-top: 2px solid #007bff; */
+    overflow: hidden; /* Ensures the child buttons don't overflow the rounded corners */
+}
+
+/* Style for the toggle buttons */
+.overviewContainer .toggleButton {
+    background-color: transparent; /* White background for inactive buttons */
+    color: #0066cd; /* Text color to match the active button background */
+    padding: 10px 50px;
+    border-radius: 0%;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    text-align: center;
+    flex: 1; /* Each button takes up equal space */
+    margin: 0; /* Remove any default margins */
+    white-space: nowrap;
+}
+
+.overviewContainer .toggleButton:not(:first-child) {
+    border-left: 2px solid #0066cd; /* Border to separate buttons */
+}
+
+/* Hover effect for buttons */
+.overviewContainer .toggleButton:hover:not(.active) {
+    background-color: #001a33; /* Light grey background on hover */
+    color: #0066cd; /* Ensure text color stays blue to match border */
+}
+
+/* Active button style */
+.overviewContainer .toggleButton.active {
+    background-color: #0066cd; /* Active button color */
+    color: #000d1a; /* White text color for active button */
+    font-weight: 500;
+}
+
+/* Style to make the chart smaller and centered */
+.overviewContainer .chartContainer {
+    width: 100%;
+    height: 400px;
+    margin-top: 20px; /* Add some space above the chart */
+    margin-bottom: 20px; /* Add some space below the chart */
+}
+
+.overviewContainer .chart-header {
+    text-align: center;
+    font-size: 1.2em;
+    margin: 50px 0;
+    color: white;
+    font-weight: 500;
+}
+
+
+.overviewContainer .custom-legend-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center items vertically */
+    flex-wrap: wrap; /* Wrap items if not enough space */
+}
+  
+.overviewContainer .legend-item {
+    display: flex;
+    align-items: center;
+    margin: 0 10px; /* Adjust spacing as needed */
+}
+  
+.overviewContainer .legend-icon {
+    margin-right: 5px; /* Adjust spacing as needed */
+}
+  
+.overviewContainer .clickable-icon {
+    margin-left: 5px; /* Adjust spacing as needed */
+    cursor: pointer;
+}
+
+
+.overviewContainer .custom-tooltip {
+    background-color: rgb(0,13,26,0.9);
+    padding: 10px; 
+    border-radius: 5px;
+    border: 1px solid #676767;
+  }
+  
+.overviewContainer .custom-tooltip .label {
+    margin: 0;
+    font-weight: 400;
+    font-size: 1.1em;
+    color: #989898;
+}
+  
+.overviewContainer .custom-tooltip .intro {
+    margin: 0;
+    font-weight: 400;
+    font-size: 1.1em;
+}
+  
+.overviewContainer .custom-tooltip .desc {
+    margin: 0;
+    font-weight: 400;
+    font-size: 1.1em;
+}
+
+.overviewContainer .initial-deposit-message {
+    text-align: center; /* Center the text */
+    padding: 20px; /* Add padding for spacing */
+    color: #9e9e9e;
+    font-style: italic;
+    font-size: 1.1em;
+}

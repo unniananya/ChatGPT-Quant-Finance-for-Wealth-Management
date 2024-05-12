@@ -1,0 +1,407 @@
+.paper-trading-stage1 {
+    padding: 20px;
+    padding-left: 90px;
+    background-color: #000d1a;
+    min-height: 100vh;
+}
+
+.paper-trading-stage1 h1{
+  color: #fff;
+  font-weight: 400;
+  font-size: 2.2em;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.paper-trading-stage1 bold{
+  font-weight: 550;
+}
+
+
+.paper-trading-stage1 .welcome-bottom{
+  color: #989898;
+  font-weight: 500;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+
+
+
+.paper-trading-stage1 .cash-value-container {
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-start; /* Aligns items to the start of the flex direction */
+}
+
+.paper-trading-stage1 .current-cash-profit-loss-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.paper-trading-stage1 .cash-value-container .current-cash-container, .paper-trading-stage1 .portfolio-value-container {
+  background-color: #000d1a;
+  padding: 20px;
+  border-radius: 8px;
+  flex-basis: 30%; 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 30px;
+}
+
+/* Ensure that the current-cash-container does not have a bottom margin that pushes the profit-loss-container down */
+.paper-trading-stage1 .current-cash-container {
+  margin-bottom: 0;
+}
+
+.paper-trading-stage1 .cash-value-container .current-cash-label, .cash-value-container .portfolio-value-label {
+  font-size: 1.1em; 
+  color: #989898; 
+  margin-bottom: 10px; 
+}
+
+.paper-trading-stage1 .cash-value-container .current-cash-value, .cash-value-container .portfolio-value {
+  font-size: 3em; 
+  font-weight: bold;
+  color: #fff;
+}
+
+.paper-trading-stage1 .profit-loss-container {
+  background-color: #000d1a;  
+  padding: 20px;
+  border-radius: 8px;
+  flex-basis: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 30px;
+}
+
+.paper-trading-stage1 .profit-loss-label {
+  font-size: 1em;
+  color: #989898;
+  margin-bottom: 5px;
+}
+
+
+.paper-trading-stage1 .profit-loss-container .value-box {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px; /* Adjust for more or less rounded corners */
+  color: #fff; /* White text color */
+  margin-top: 10px;
+  font-size: 1em;
+}
+
+.paper-trading-stage1 .profit-loss-container .positive-value {
+  background-color: rgba(0, 229, 0, 0.2); /* Light green background */
+  color: rgb(0, 165, 0); /* Green text color */
+}
+
+.paper-trading-stage1 .profit-loss-container .negative-value {
+  background-color: rgba(229, 0, 0, 0.2); /* Light red background */
+  color: rgb(165, 0, 0); /* Red text color */
+}
+
+
+.paper-trading-stage1 .stock-list-controls {
+  display: flex; /* Use flex layout */
+  align-items: center; /* Center items vertically */
+  gap: 10px; /* Add space between the buttons and the stock list */
+  margin-bottom: 20px; /* Space below the stock list controls */
+}
+
+.paper-trading-stage1 .scroll-btn {
+  padding: 10px 20px; /* Button padding */
+  background-color: #001a33; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* Remove border */
+  cursor: pointer; /* Cursor pointer */
+  user-select: none; /* Prevent text selection */
+}
+
+.paper-trading-stage1 .scroll-btn:hover{
+  background-color: #0066cd;
+} 
+
+/* Styling for the container that holds the stock list */
+.paper-trading-stage1 .stock-list-container {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Ensure all items are in a single line */
+  margin: 0 10px; /* Margin on the sides */
+  scrollbar-width: thin; /* Make scrollbar thinner */
+  scrollbar-color: #888 #000; /* Scrollbar styling */
+}
+
+/* Styling for scrollbar on Webkit browsers */
+.paper-trading-stage1 .stock-list-container::-webkit-scrollbar {
+  height: 8px; /* Height of the scrollbar */
+}
+
+.paper-trading-stage1 .stock-list-container::-webkit-scrollbar-track {
+  background: #000; /* Track color */
+}
+
+.paper-trading-stage1 .stock-list-container::-webkit-scrollbar-thumb {
+  background-color: #001a33; /* Thumb color */
+  border-radius: 10px; /* Round the corners of the scrollbar thumb */
+}
+  
+.paper-trading-stage1 .stock-list {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 10px 0; /* Padding on top and bottom */
+    margin-bottom: 20px;
+}
+  
+/* Styling for each stock item */
+.paper-trading-stage1 .stock-item {
+  flex: 0 0 auto;
+  display: inline-flex; /* Inline-flex so they line up in a row */
+  flex-direction: column; /* Stack children elements vertically */
+  /* border: 1px solid #989898; */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #001a33; /* Background color */
+  padding: 15px; /* Padding inside the stock items */
+  width: 250px; /* Width of each stock item */
+  box-sizing: border-box;
+}
+  
+.paper-trading-stage1 .stock-item:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05); /* Slightly scale up on hover */
+    transition: transform 0.3s ease;
+}
+  
+/* Add a new class for the stock symbol */
+.paper-trading-stage1 .stock-item h2 {
+  color: #fff; 
+  font-size: 2em; 
+}
+
+/* Add a new class for the stock price and daily change */
+.paper-trading-stage1 .stock-item .stock-info {
+  color: #989898;
+  font-size: 1em; 
+}
+
+
+/* This targets the paragraphs inside the stock-info class, assuming you've wrapped your price and daily change text as suggested earlier */
+.paper-trading-stage1 .stock-item .stock-info p {
+  display: flex;
+  justify-content: space-between; /* Aligns the label to the left and the value to the right */
+  margin-top: 10px; /* Adjust top margin as needed */
+  margin-bottom: 5px; /* Adjust bottom margin as needed */
+}
+
+.paper-trading-stage1 .stock-item .stock-info .value {
+  margin-left: auto; /* Pushes the value to the right */
+  background-color: rgba(0, 102, 205, 0.2);
+  color: #0066cd; 
+  /* background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;  */
+  padding: 1px 5px;
+  border-radius: 5px;
+}
+
+.paper-trading-stage1 .stock-item .stock-info .positive-value {
+  background-color: rgba(0, 229, 0, 0.2); /* Light green background */
+  padding: 1px 5px;
+  color: rgb(0, 165, 0); /* Green text color */
+}
+
+.paper-trading-stage1 .stock-item .stock-info .negative-value {
+  background-color: rgba(229, 0, 0, 0.2); /* Light red background */
+  padding: 1px 5px;
+  color: rgb(165, 0, 0); /* Red text color */
+}
+
+
+.paper-trading-stage1 .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Dimmed background */
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Make sure it's on top of other content */
+}
+
+
+.paper-trading-stage1 .transaction-modal {
+  padding: 30px; /* Increased padding for better spacing */
+  /* border: 1px solid #7b7b7b;  */
+  border-radius: 10px; /* Slightly larger border radius for a modern look */
+  background-color: #001a33; /* Dark background for the modal */
+  color: #fff; /* White text color for better readability on the dark background */
+  width: auto; /* Auto width based on content */
+  max-width: 400px; /* Maximum width of the modal */
+  z-index: 1001; /* Ensures the modal is above the overlay */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* More pronounced shadow for a floating effect */
+}
+
+.paper-trading-stage1 .transaction-modal h2 {
+  /* margin-bottom: 20px; */
+  color: #fff; /* Themed color for titles */
+  text-align: left; /* Centering the title */
+  font-size: 1.8em;
+}
+
+.paper-trading-stage1 .transaction-modal p {
+  color: #fff; /* Themed color for the symbol text */
+  font-size: 1.1em;
+  text-align: left; /* Centering the symbol text */
+  margin-bottom: 20px; /* Space below the symbol */
+}
+
+.paper-trading-stage1 .transaction-modal label {
+  display: block; /* Make the label take the full width */
+  margin-bottom: .5rem; /* Space below the label */
+  color: #989898; /* Lighter text color for labels */
+}
+  
+.paper-trading-stage1 .transaction-modal input,
+.paper-trading-stage1 .transaction-modal select {
+    width: 100%; /* Make the input take full width of the modal */
+    padding: 10px; /* Larger padding for better touch target */
+    margin-bottom: 20px; /* Space below the input */
+    border: 1px solid #333; /* Darker border for the inputs */
+    background-color: #000d1a; /* Darker background for inputs */
+    color: #fff; /* White text for inputs */
+    border-radius: 5px; 
+    font-family: 'Poppins', sans-serif;
+}
+  
+.paper-trading-stage1 .transaction-modal .transaction-modal-actions {
+    display: flex;
+    justify-content: space-around; /* Even space around the buttons */
+    align-items: center; /* Vertically center align items */
+}
+  
+.paper-trading-stage1 .execute-transaction-btn,
+.paper-trading-stage1 .cancel-transaction-btn {
+    flex-grow: 1; /* Buttons take up equal space */
+    margin: 0 10px; /* Space between buttons */
+    margin-top: 20px;
+    padding: 10px 20px; /* Padding top and bottom */
+    border-radius: 5px;
+    font-weight: 500; /* Bold font for buttons */
+}
+  
+.paper-trading-stage1 .execute-transaction-btn {
+    background-color: #001a33;
+    border: 1px solid #989898;
+}
+  
+.paper-trading-stage1 .cancel-transaction-btn {
+    background-color: #001a33;
+    border: 1px solid #989898;
+}
+  
+  /* Hover effects for buttons */
+.paper-trading-stage1 .execute-transaction-btn:hover {
+    background-color: #001a33;
+    transform: scale(1.1); /* Slightly scale up on hover */
+    transition: transform 0.3s ease;
+}
+  
+.paper-trading-stage1 .cancel-transaction-btn:hover {
+    background-color: #001a33;
+    transform: scale(1.1); /* Slightly scale up on hover */
+    transition: transform 0.3s ease;
+}
+
+/* Optional: If you want to add an animation to the modal appearance */
+.paper-trading-stage1 .transaction-modal {
+  animation: modalFadeIn 0.3s;
+}
+
+@keyframes modalFadeIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+  
+
+.paper-trading-stage1 .error-message {
+  color: red;
+  font-weight: bold;
+}
+
+
+.paper-trading-stage1 .charts-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  /* padding-bottom: 60px; */
+  margin-bottom: 60px;
+  /* border: 2px solid white; */
+}
+
+.paper-trading-stage1 .chart-container {
+  flex: 1;
+  margin-right: 60px;
+  /* additional styles */
+}
+
+.paper-trading-stage1 .pie-chart-container {
+  flex: 1;
+  /* additional styles */
+}
+
+.paper-trading-stage1 .recharts-tooltip-item {
+  color: #989898 !important; /* Grey font color */
+}
+
+.paper-trading-stage1 .recharts-default-tooltip {
+  background-color: rgb(0,13,26,0.9) !important;
+  border: none !important; 
+  border-radius: 5px !important; 
+  border: 1px solid #676767  !important;
+}
+
+
+.paper-trading-stage1 .advice-modal {
+  padding: 50px;
+  background-color: #001a33;
+  color: #fff;
+  border-radius: 20px;
+  text-align: left;
+  position: relative; /* For positioning the close button */
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.paper-trading-stage1 .chatgpt-advice{
+  font-size: 1.2em;
+}
+
+.paper-trading-stage1 .close-advice-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Optionally, add hover effect for close button */
+.paper-trading-stage1 .close-advice-btn:hover {
+  background-color: transparent;
+  transform: scale(1.2); /* Slightly scale up on hover */
+  transition: transform 0.3s ease;
+}
