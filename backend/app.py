@@ -57,17 +57,17 @@ ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 openai.api_key = openai_api_key
 
 vonage_client = vonage.Client(
-   key='99b0b4fa', secret='yUjyNeWx4aKtw15U'
+   key=VONAGE_KEY, secret= VONAGE_SECRET
 )
 
-finnhub_client = finnhub.Client(api_key="cka1fipr01qq65jklghgcka1fipr01qq65jklgi0")
-FINNHUB_API_KEY = 'cka1fipr01qq65jklghgcka1fipr01qq65jklgi0'
+finnhub_client = finnhub.Client(api_key="FINNHUB_API")
+FINNHUB_API_KEY = FINNHUB_API
 FINNHUB_BASE_URL = 'https://finnhub.io/api/v1'
 
 app = Flask(__name__, static_url_path='/uploads', static_folder='uploads')
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///fyp.db'
 # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SECRET_KEY'] = '053ea28433a9deaf6797af76dde1c2bb'
+app.config['SECRET_KEY'] = SECRET_KEY
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
