@@ -2,7 +2,7 @@ from app import mongo
 import requests
 import time
 import openai
-FINNHUB_API_KEY = 'cka1fipr01qq65jklghgcka1fipr01qq65jklgi0'
+FINNHUB_API_KEY = FINNHUB_API
 FINNHUB_BASE_URL = 'https://finnhub.io/api/v1'
 
 
